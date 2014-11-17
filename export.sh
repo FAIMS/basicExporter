@@ -6,10 +6,10 @@
 # $4 file to write markdown text into e.g. /tmp/mark_down.txt => h3. Traditional html title
  
 # read json interface input file into string
-json = ruby parse_json.rb $2
+json=`echo $2 | python -mjson.tool`
  
 # export database to csv using json inputs and pass output into export file inside download directory
-python shapefile.py $1/db.sqlite3 $1 json 
+#python shapefile.py $1/db.sqlite3 $1 json 
  
 # generate markup and pass output to markup file
-echo "Exported **CSV**" >> $4
+echo "Exported **CSV**" $1 $json $3  > $4
