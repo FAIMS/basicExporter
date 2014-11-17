@@ -12,4 +12,4 @@ json=`echo $2 | python -mjson.tool`
 #python shapefile.py $1/db.sqlite3 $1 json 
  
 # generate markup and pass output to markup file
-echo "Exported **CSV**" $1 $json $3  > $4
+echo "Exported **CSV**" $1 $2 $3  > $4
